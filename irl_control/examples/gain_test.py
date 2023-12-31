@@ -43,7 +43,7 @@ class GainTest(MujocoApp):
         
         # Keep track of device target errors
         self.errors = dict()
-        self.errors['ur5right'] = 0
+        self.errors['ur5right'] = 0.
         self.viewer = MjViewer(self.sim)
         self.viewer.cam.azimuth = 90
         self.viewer.cam.elevation = -30
@@ -180,6 +180,6 @@ if __name__ == "__main__":
     demo = GainTest(robot_config_file="default_xyz.yaml", scene_file="gain_test_scene.xml")
     # Run the gain test
     demo_name1 = "gain_test"
-    demo.run(demo_name1, 10)
+    demo.run(demo_name1, 5)
     # demo_name2 = "figure8"
     # demo.run(demo_name2, 10)

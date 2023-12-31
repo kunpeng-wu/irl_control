@@ -5,7 +5,7 @@ from transforms3d.derivations.quaternions import qmult
 from transforms3d.quaternions import qconjugate
 from transforms3d.euler import quat2euler, euler2quat
 from transforms3d.utils import normalized_vector
-from typing import Dict, Tuple
+from typing import Dict, Tuple, List
 from irl_control import Robot, Device
 from irl_control.utils import ControllerConfig, Target
 from irl_control.device import DeviceState
@@ -16,7 +16,7 @@ class OSC():
         This controller accepts targets as a input, and generates a control signal
         for the devices that are linked to the targets.
     """
-    def __init__(self, robot: Robot, sim, input_device_configs: Tuple[str, Dict], nullspace_config : Dict = None, use_g=True, admittance=False):
+    def __init__(self, robot: Robot, sim, input_device_configs: List[Tuple[str, Dict]], nullspace_config : Dict = None, use_g=True, admittance=False):
         self.sim = sim
         self.robot = robot
         
