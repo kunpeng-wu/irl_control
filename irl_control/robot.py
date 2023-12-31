@@ -82,7 +82,7 @@ class Robot():
         return state
 
     def __set_state(self, state_var: RobotState):
-        assert self.__use_sim is False
+        # assert self.__use_sim is False
         self.__state_locks[state_var].acquire()
         func = self.__state_var_map[state_var]
         value = func()
@@ -96,12 +96,12 @@ class Robot():
         return self.__use_sim
 
     def __update_state(self):
-        assert self.__use_sim is False
+        # assert self.__use_sim is False
         for var in RobotState:
             self.__set_state(var)
     
     def start(self):
-        assert self.running is False and self.__use_sim is False
+        # assert self.running is False and self.__use_sim is False
         self.running = True
         interval = float(1.0/float(self.data_collect_hz))
         prev_time = time.time()
@@ -116,7 +116,7 @@ class Robot():
             prev_time = curr_time
     
     def stop(self):
-        assert self.running is True and self.__use_sim is False
+        # assert self.running is True and self.__use_sim is False
         self.running = False
 
     def get_device(self, device_name: str) -> Device:

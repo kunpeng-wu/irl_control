@@ -173,7 +173,7 @@ class Device():
         """
         Set the state of the device corresponding to the key value (if exists)    
         """
-        assert self.__use_sim is False
+        # assert self.__use_sim is False
         self.__state_locks[state_var].acquire()
         var_func = self.__state_var_map[state_var]
         var_value = var_func()
@@ -200,7 +200,7 @@ class Device():
         """
         This should running in a thread: Robot.start()
         """
-        assert self.__use_sim is False
+        # assert self.__use_sim is False
         for var in DeviceState:
             self.__set_state(var)
         

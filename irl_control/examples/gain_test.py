@@ -1,7 +1,7 @@
 from mujoco_py import GlfwContext
 from mujoco_py.mjviewer import MjViewer
 import numpy as np
-from typing import Tuple
+from typing import Tuple, Dict
 import threading
 from irl_control import MujocoApp, OSC
 from irl_control.utils import Target
